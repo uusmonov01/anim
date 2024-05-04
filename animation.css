@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: gray;
+    padding: 30px;
+}
+
+.container {
+    width: 600px;
+    height: 400px;
+    margin: 30px auto;
+    border: 2px solid black;
+    position: relative;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: white;
+    text-transform: uppercase;
+}
+
+@keyframes anim-bg {
+    to {
+        background-color: navy;
+        background-color: chartreuse;
+        background-color: aqua;
+    }
+}
+
+.box1 {
+    background-color: crimson;
+    animation-name: anim-bg;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 0;
+    animation-iteration-count: 999;
+    animation-direction: alternate;
+}
+
+.box2 {
+    background-color: aqua;
+    animation-name: animation-bg;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 0;
+    animation-iteration-count: 999;
+    animation-direction: alternate;
+}
+
+@keyframes animation-bg {
+    to {
+        background-color: navy;
+        background-color: chartreuse;
+        background-color: aqua;
+        border-radius: 150px;
+    }
+}
+
+.box3 {
+    background-color: blueviolet;
+    animation-name: anim-action 1s linear 0s infinite alternate forwards;
+}
+
+
+@keyframes anim-action {
+    to {
+        /* background-color: navy;
+        background-color: chartreuse;
+        background-color: aqua;
+        transform: translate(301%); */
+        margin-left: 450px;
+
+    }
+}
+
+
+.box4 {
+    background-color: teal;
+    animation-name: a-bg;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+
+@keyframes a-bg {
+    to {
+        background-color: navy;
+        background-color: chartreuse;
+        background-color: aqua;
+        transform: scale(1.2);
+    }
+}
+
+.box5 {
+    background-color: gold;
+    animation: animation-bg, anim-bg, anim-action, anim-rotate;
+    animation-duration: 1s, 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate, normal;
+    /* animation-fill-mode: forwards; */
+}
+
+@keyframes anim-rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.box6 {
+    background-color: indigo;
+    border-radius: 50%;
+    position: absolute;
+    animation: anim-position 2s infinite linear;
+}
+
+@keyframes anim-position {
+    0% {
+        top: 0;
+        left: 0;
+        transform: translate(0) rotate(0);
+    }
+
+    25% {
+        top: 0;
+        left: 100%;
+        transform: translate(-100%, 0) rotate(-90deg);
+    }
+
+    50% {
+        top: 100%;
+        left: 100%;
+        transform: translate(-100%, -100%) rotate(-180deg);
+    }
+
+    75% {
+        top: 100%;
+        left: 0;
+        transform: translate(0, -100%) rotate(-270deg);
+    }
+
+    100% {
+        top: 0;
+        left: 0;
+        transform: translate(0) rotate(-360deg);
+    }
+
+}
+
+.box7 {
+    background-color: black;
+    animation: anime 01s infinite linear alternate;
+}
+
+@keyframes anime {
+    0% {
+        width: 150px;
+    }
+
+    50% {
+        width: 100%;
+    }
+
+    100% {
+        margin-left: auto;
+        width: 150px;
+    }
+}
+
+.box8 {
+    background-color: green;
+    transition: 0.5s;
+    transform-origin: 100% 100%;
+    animation-name: anim-move 2s linear alternate;
+}
+
+/* 
+.container:hover .box8{
+    transform: rotate(180deg);
+} */
+
+@keyframes anim-move {
+    to {
+        top: 50%;
+        left: 50%;
+        width: 5.4em;
+        height: 5.4em;
+    }
+}
